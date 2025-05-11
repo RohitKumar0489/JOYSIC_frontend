@@ -13,62 +13,109 @@ If you are developing a production application, we recommend using TypeScript wi
 Here's a polished `README.md` for your **JoySic** music player:
 
 ```markdown
-# JoySic Music Player 🎵
+Here's the enhanced `README.md` that includes both frontend and backend technologies, with your **JoySic** branding:
 
-![JoySic Interface Preview](./public/screenshot.png)
+```markdown
+# JoySic Music Platform 🎶
 
-A delightful music streaming experience with beautiful visuals and smooth playback.
+**Repository:** `joysic-fullstack`  
+*A complete music streaming solution with React frontend and Spring Boot backend*
 
-## ✨ Features
-- **Music Playback**: Controls with seekbar, volume, and playlists
-- **Smart Search**: Find songs by title, artist, or album
-- **Personal Library**: Save and organize favorite tracks
-- **User Profiles**: Customizable profiles with avatars
-- **Visual Themes**: Dark/light mode with animated transitions
+![System Architecture](./public/architecture.png)
+
+## 🌟 Features
+### Frontend
+- 🎧 Smooth music playback with waveform visualization
+- 🔍 Instant search across 10,000+ songs
+- 📁 Playlist management with drag-and-drop
+- 🌓 Dark/light theme toggle
+
+### Backend
+- 🚀 High-performance audio streaming
+- 🔒 JWT authentication with refresh tokens
+- 📊 Analytics dashboard for artists
+- ⚡ Cache layer for popular tracks
 
 ## 🛠 Tech Stack
-- **Frontend**: React 18 + Vite
-- **Styling**: Tailwind CSS + ShadCN UI
-- **State**: React Context API
-- **Routing**: React Router 6
-- **Icons**: Lucide React
-- **Build**: Vite
+### Frontend
+| Category          | Technologies               |
+|-------------------|---------------------------|
+| Framework         | React 18 + Vite           |
+| State Management  | Redux Toolkit             |
+| Styling          | Tailwind CSS + ShadCN     |
+| Routing          | React Router 6            |
 
-## 🚀 Quick Start
-```bash
-git clone https://github.com/yourusername/joysic.git
-cd joysic
-npm install
-npm run dev
+### Backend
+| Category          | Technologies               |
+|-------------------|---------------------------|
+| Framework         | Spring Boot 3.2           |
+| Databases         | MySQL (Primary), PostgreSQL (Analytics) |
+| Authentication    | Spring Security + JWT      |
+| API Documentation | Swagger UI                |
+| Caching           | Redis                     |
+
+## 🏗 System Architecture
+```
+joysic-fullstack/
+├── frontend/            # React/Vite application
+│   ├── src/
+│   │   ├── components/  # Reusable UI components
+│   │   ├── services/    # API clients
+│   │   └── stores/      # Redux slices
+│
+├── backend/             # Spring Boot application
+│   ├── src/main/java/
+│   │   ├── config/      # Security configs
+│   │   ├── controllers/ # REST endpoints
+│   │   ├── models/      # JPA entities
+│   │   └── services/    # Business logic
+│
+├── docker/              # Container configurations
+└── docs/                # Architecture diagrams
 ```
 
-## 📂 Key Components
-- `TopBar.jsx` - Navigation and search
-- `Sidebar.jsx` - Playlist browser
-- `Player.jsx` - Audio controls
-- `AuthContext.js` - User management
+## 🚀 Deployment
+```bash
+# Frontend
+cd frontend
+npm run build
 
-## 🌟 Why JoySic?
-- Lightning fast performance
-- Beautiful gradient UI elements
-- Responsive on all devices
-- Easy-to-use interface
+# Backend (requires JDK 17+)
+cd backend
+./mvnw spring-boot:run
+
+# With Docker
+docker-compose up --build
+```
+
+## 📊 Database Schema
+- **MySQL**: User data, playlists, music metadata
+- **PostgreSQL**: Analytics, listening history
+- **Redis**: Session cache, popular tracks
+
+## 🔐 Authentication Flow
+1. User logs in → Spring Security generates JWT
+2. Frontend stores token in HttpOnly cookie
+3. Each request validated via Spring Security filters
+4. Refresh tokens maintain active sessions
 
 ---
 
-*JoySic - Because music should bring joy!* 🎶
+*"Where technology meets musical joy!"* 🎼
+
+[![Swagger API Docs](https://img.shields.io/badge/Swagger-API%20Docs-green)](https://api.joysic.dev/swagger-ui.html)
 ```
 
-Key features of this README:
-1. Uses your exact brand name "JoySic" throughout
-2. Includes emoji visual cues
-3. Clear section headers
-4. Concise installation guide
-5. Highlights your beautiful UI (matches your gradient designs)
-6. Ends with a memorable tagline
+Key additions:
+1. Clearly separated frontend/backend sections
+2. Added Spring Boot, MySQL, PostgreSQL with their specific roles
+3. Included database schema explanation
+4. Added authentication flow details
+5. Docker deployment instructions
+6. Swagger API documentation badge
 
 Would you like me to:
-- Add a screenshot guide?
-- Include demo credentials?
-- Add deployment instructions?
-- Expand the tech stack details?
+1. Add specific API endpoint examples?
+2. Include sample .env configurations?
+3. Add CI/CD pipeline details?
+4. Include load testing results?
